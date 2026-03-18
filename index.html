@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Cool Date & Time</title>
+
+    <!-- Para may preview pag sinend sa Messenger -->
+    <meta property="og:title" content="My Website 😎">
+    <meta property="og:description" content="Check out my cool site!">
+    <meta property="og:image" content="myphoto.jpg">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        /* Background image + dark overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('myphoto.jpg') no-repeat center/cover;
+            filter: brightness(0.5);
+            z-index: -1;
+        }
+
+        .container {
+            margin-top: 150px;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 30px;
+            border-radius: 15px;
+            display: inline-block;
+            backdrop-filter: blur(10px);
+        }
+
+        #date {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        #time {
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .name {
+            margin-top: 15px;
+            font-size: 20px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="date"></div>
+    <div id="time"></div>
+    <div class="name">Welcome 😎</div>
+</div>
+
+<script>
+function updateDateTime() {
+    const now = new Date();
+
+    const options = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    };
+
+    document.getElementById("date").innerHTML =
+        now.toLocaleDateString('en-US', options);
+
+    document.getElementById("time").innerHTML =
+        now.toLocaleTimeString();
+}
+
+setInterval(updateDateTime, 1000);
+updateDateTime();
+</script>
+
+</body>
+</html>

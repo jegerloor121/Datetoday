@@ -3,10 +3,12 @@
 <head>
     <title>My Cool Date & Time</title>
 
-    <!-- Para may preview pag sinend sa Messenger -->
+    <!-- Open Graph (para sa Messenger / Facebook preview) -->
     <meta property="og:title" content="My Website 😎">
     <meta property="og:description" content="Check out my cool site!">
-    <meta property="og:image" content="myphoto.jpg">
+    <meta property="og:image" content="https://yourwebsite.com/myphoto.jpg">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
 
     <style>
         body {
@@ -51,7 +53,39 @@
         .name {
             margin-top: 15px;
             font-size: 20px;
-            opacity: 0.8;
+            opacity: 0.9;
+        }
+
+        /* Buttons container */
+        .buttons {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        /* Facebook buttons */
+        .fb-btn {
+            padding: 10px 20px;
+            background: #1877f2;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .fb-btn:hover {
+            background: #0f5dc2;
+        }
+
+        /* Red button style */
+        .red-btn {
+            background: red;
+        }
+
+        .red-btn:hover {
+            background: darkred;
         }
     </style>
 </head>
@@ -60,7 +94,19 @@
 <div class="container">
     <div id="date"></div>
     <div id="time"></div>
+
     <div class="name">Welcome 😎</div>
+
+    <!-- Dalawang Facebook buttons -->
+    <div class="buttons">
+        <a href="https://www.facebook.com/yourprofile" target="_blank" class="fb-btn">
+            Visit my Facebook
+        </a>
+
+        <a href="https://www.bing.com/images/search?view=detailV2&ccid=4krlWSMF&id=078F5FD112668C6D7849B70574EF54DCE697E9BD&thid=OIP.4krlWSMFKII_ycDypN11JQHaJy&mediaurl=https%3a%2f%2fi.pinimg.com%2f736x%2fa3%2fa5%2f44%2fa3a5445faa8d9f97b5f0dd9158652b2f.jpg&exph=634&expw=480&q=pakyo+image&FORM=IRPRST&ck=0D05867928404DD901E0F23ECC84D899&selectedIndex=0&itb=0&ajaxhist=0&ajaxserp=0" target="_blank" class="fb-btn red-btn">
+            Next
+        </a>
+    </div>
 </div>
 
 <script>
